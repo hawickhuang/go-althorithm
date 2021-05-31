@@ -22,8 +22,8 @@ func buildList(nums []int) *ListNode {
 		return nil
 	}
 	head := &ListNode{
-		val: nums[0],
-		next: buildList(nums[1:]),
+		Val: nums[0],
+		Next: buildList(nums[1:]),
 	}
 	return head
 }
