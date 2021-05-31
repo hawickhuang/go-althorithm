@@ -14,3 +14,19 @@ func findRepeatNumber(nums []int) int {
 	return -1
 }
 
+func findRepeatNumber2(nums []int) int {
+	length := len(nums)
+
+	i := 0
+	for i < length {
+		if i == nums[i] {
+			i += 1
+			continue
+		}
+		if nums[nums[i]] == nums[i] {
+			return nums[i]
+		}
+		nums[i], nums[nums[i]] = nums[nums[i]], nums[i]
+	}
+	return -1
+}
