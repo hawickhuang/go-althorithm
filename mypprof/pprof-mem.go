@@ -1,6 +1,9 @@
 package mypprof
 
-import "math/rand"
+import (
+	"math/rand"
+	"strings"
+)
 
 const letterBytes = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -18,4 +21,12 @@ func Concat(n int) string {
 		s += randString(n)
 	}
 	return s
+}
+
+func Concat2(n int) string {
+	var s strings.Builder
+	for i := 0; i < n; i++ {
+		s.WriteString(randString(n))
+	}
+	return s.String()
 }
